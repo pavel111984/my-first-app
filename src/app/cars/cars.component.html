@@ -1,3 +1,5 @@
+<h3>Форма добавления машины</h3>
+<hr>
 <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
 <!--<p *ngIf="!addCarStatus; else successStatus">Машина не добавлена</p>
 <ng-template #successStatus>
@@ -5,5 +7,11 @@
 </ng-template>
 -->
 <hr>
+<div class="list-group">
+    <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
+        <h5 #carHeading class="list-group-item-heading">Название: {{ car.name }}</h5>
+        <p class="list-group-item-text">Год: {{ car.year }} </p>
+    </app-car>
+</div>
 
-<app-car *ngFor="let car of cars" [carItem]="car"></app-car>
+
